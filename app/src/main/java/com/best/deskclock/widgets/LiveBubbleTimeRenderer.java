@@ -177,9 +177,9 @@ public final class LiveBubbleTimeRenderer {
             int mOnes = minStr.charAt(1) - '0';
 
             drawWavyDigit(canvas, hDigit, 272.0f, 668.0f, 1.0f, strokePaint, fillPaint);
-            drawWavyColon(canvas, 355.5f, 684.0f, 1.0f, fillPaint);
-            drawWavyDigit(canvas, mTens, 426.0f, 690.0f, 1.0f, strokePaint, fillPaint);
-            drawWavyDigit(canvas, mOnes, 540.0f, 702.0f, 1.0f, strokePaint, fillPaint);
+            drawWavyColon(canvas, 350.0f, 684.0f, 1.0f, fillPaint);
+            drawWavyDigit(canvas, mTens, 432.0f, 690.0f, 1.0f, strokePaint, fillPaint);
+            drawWavyDigit(canvas, mOnes, 542.0f, 702.0f, 1.0f, strokePaint, fillPaint);
         } else {
             // 5-character undulating wave layout ("HH:mm", e.g., "14:22", "10:38", "23:59"):
             // Proportionally scaled (0.82x) along the same emerald bubble wave so all 5 digits
@@ -189,11 +189,11 @@ public final class LiveBubbleTimeRenderer {
             int mTens = minStr.charAt(0) - '0';
             int mOnes = minStr.charAt(1) - '0';
 
-            drawWavyDigit(canvas, hTens, 240.0f, 656.0f, 0.82f, strokePaint, fillPaint);
-            drawWavyDigit(canvas, hOnes, 320.0f, 668.0f, 0.82f, strokePaint, fillPaint);
-            drawWavyColon(canvas, 380.0f, 681.0f, 0.85f, fillPaint);
-            drawWavyDigit(canvas, mTens, 444.0f, 690.0f, 0.82f, strokePaint, fillPaint);
-            drawWavyDigit(canvas, mOnes, 538.0f, 702.0f, 0.82f, strokePaint, fillPaint);
+            drawWavyDigit(canvas, hTens, 228.0f, 656.0f, 0.82f, strokePaint, fillPaint);
+            drawWavyDigit(canvas, hOnes, 316.0f, 668.0f, 0.82f, strokePaint, fillPaint);
+            drawWavyColon(canvas, 382.0f, 681.0f, 0.85f, fillPaint);
+            drawWavyDigit(canvas, mTens, 452.0f, 690.0f, 0.82f, strokePaint, fillPaint);
+            drawWavyDigit(canvas, mOnes, 544.0f, 702.0f, 0.82f, strokePaint, fillPaint);
         }
     }
 
