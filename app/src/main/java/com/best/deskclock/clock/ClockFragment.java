@@ -451,6 +451,14 @@ public final class ClockFragment extends DeskClockFragment {
             ClockUtils.setAnalogClockSecondsEnabled(mSettings.clockStyle, analogClock, mSettings.showSeconds);
         }
 
+        // Display the Model 3 Live Real-Time Clock (synchronized digital bubble + analog dial)
+        mBinding.mainClockFrame.model3ClockView.setVisibility(VISIBLE);
+        mBinding.mainClockFrame.pinLiveMicroTileButton.setOnClickListener(
+            v -> com.best.deskclock.uicomponents.LiveIconInstaller.pinLiveMicroTile(requireContext())
+        );
+        analogClock.setVisibility(GONE);
+        digitalClock.setVisibility(GONE);
+
         refreshAlarmAndDate();
     }
 

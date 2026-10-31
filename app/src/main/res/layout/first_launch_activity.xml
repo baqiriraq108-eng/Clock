@@ -18,14 +18,12 @@
         android:layout_height="wrap_content"
         android:paddingVertical="10dp">
 
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+        <com.best.deskclock.uicomponents.Model3ClockView
+            android:id="@+id/first_launch_model3_clock"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="10dp"
-            app:srcCompat="@drawable/app_icon"
-            android:contentDescription="@null">
-        </ImageView>
+            android:layout_marginBottom="10dp" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/first_launch_app_title"

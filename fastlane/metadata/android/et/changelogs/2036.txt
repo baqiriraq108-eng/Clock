@@ -1,2 +1,0 @@
-Paljud veaparandused ja täiendused on kirjeldatud siin:
-https://github.com/BlackyHawky/Clock/releases/tag/2.32

@@ -444,6 +444,30 @@
                 android:resource="@xml/appwidget_next_alarm" />
         </receiver>
 
+        <!-- Model 3 1x1 Zero-Drain Live Clock Micro-Tile -->
+        <receiver
+            android:name="com.best.deskclock.widgets.LiveClockWidgetProvider"
+            android:exported="true"
+            android:label="@string/app_label"
+            android:icon="@mipmap/ic_launcher">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.intent.action.CONFIGURATION_CHANGED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.LOCALE_CHANGED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="com.best.deskclock.widgets.ACTION_LIVE_WIDGET_MINUTE_TICK" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/live_clock_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name="com.best.deskclock.widgets.LiveWidgetPinnedReceiver"
+            android:exported="false" />
+
         <!-- ============================================================== -->
         <!-- Tiles.                                                         -->
         <!-- ============================================================== -->

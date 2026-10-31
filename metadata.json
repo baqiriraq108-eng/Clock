@@ -1,0 +1,6 @@
+{
+  "name": "Clock",
+  "description": "A feature-rich Clock app with Alarm, World Clock, Stopwatch, and Timer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

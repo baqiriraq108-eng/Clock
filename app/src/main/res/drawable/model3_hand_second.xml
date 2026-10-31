@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="704dp"
+    android:height="704dp"
+    android:viewportWidth="704"
+    android:viewportHeight="704">
+    <!--
+        Exact SVG Electric Azure Second Hand + Central Domed Azure Pivot Cap (2x over 352x352 inner dial centered at 352,352):
+        SVG Second Hand: <rect x="650.5" y="324" width="7" height="184" rx="3.5" fill="url(#blueSecondGrad)" />
+        Relative to pivot (654,472): x=[-3.5..+3.5], y=[-148..+36], rx=3.5
+        At 2x around (352,352): x=[345..359] (w=14), y=[56..424] (h=368), rx=7
+        SVG Pivot Cap: <circle cx="654" cy="472" r="19" fill="url(#pivotCapGrad)" /> -> r=38 at (352,352)
+        SVG Specular Dot: <circle cx="649" cy="467" r="5" fill="#E0F2FE" opacity="0.65" /> -> r=10 at (342,342)
+    -->
+    <!-- Feathered Drop Shadow under Second Hand & Pivot Cap -->
+    <path
+        android:pathData="M352,64 A10,10 0 0,1 362,74 L362,426 A10,10 0 0,1 342,426 L342,74 A10,10 0 0,1 352,64 Z"
+        android:fillColor="#26010514" />
+    <path
+        android:pathData="M352,68 A7,7 0 0,1 359,75 L359,429 A7,7 0 0,1 345,429 L345,75 A7,7 0 0,1 352,68 Z"
+        android:fillColor="#4D010514" />
+    <path
+        android:pathData="M352,364m-42,0a42,42 0 1,1 84,0a42,42 0 1,1 -84,0"
+        android:fillColor="#29010514" />
+    <path
+        android:pathData="M352,364m-38,0a38,38 0 1,1 76,0a38,38 0 1,1 -76,0"
+        android:fillColor="#54010514" />
+
+    <!-- Electric Azure Second Hand Needle + Counterweight Tail (blueSecondGrad: #7DD3FC -> #38BDF8 -> #0284C7) -->
+    <path
+        android:pathData="M352,56 A7,7 0 0,1 359,63 L359,417 A7,7 0 0,1 345,417 L345,63 A7,7 0 0,1 352,56 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="345"
+                android:startY="56"
+                android:endX="359"
+                android:endY="424"
+                android:type="linear">
+                    <item android:offset="0.0" android:color="#FF7DD3FC" />
+                    <item android:offset="0.5" android:color="#FF38BDF8" />
+                    <item android:offset="1.0" android:color="#FF0284C7" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Central Domed Azure Pivot Cap (pivotCapGrad: #BAE6FD -> #2979FF -> #1E3A8A) -->
+    <path
+        android:pathData="M352,352m-38,0a38,38 0 1,1 76,0a38,38 0 1,1 -76,0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:centerX="340.6"
+                android:centerY="336.8"
+                android:gradientRadius="53.2"
+                android:type="radial">
+                <item android:offset="0.0" android:color="#FFBAE6FD" />
+                <item android:offset="0.45" android:color="#FF2979FF" />
+                <item android:offset="1.0" android:color="#FF1E3A8A" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Specular Glint on Domed Azure Pivot Cap (cx=342, cy=342, r=10, #E0F2FE at 0.65 opacity) -->
+    <path
+        android:pathData="M342,342m-10,0a10,10 0 1,1 20,0a10,10 0 1,1 -20,0"
+        android:fillColor="#A6E0F2FE" />
+</vector>

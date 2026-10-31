@@ -3,55 +3,34 @@ plugins {
 }
 
 android {
-    compileSdk = 37
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.best.deskclock"
         minSdk = 23
-        targetSdk = 37
-        versionCode = 2038
-        versionName = '2.34'
-        ndk {
-            abiFilters = ['armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64']
-        }
-    }
-
-    def keystorePropertiesFile = rootProject.file("keystore.properties")
-    def keystoreProperties = new Properties()
-    if (keystorePropertiesFile.exists()) {
-        keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+        targetSdk = 36
+        versionCode = 2039
+        versionName = '2.35'
     }
 
     signingConfigs {
-        release {
-            if (keystorePropertiesFile.exists()) {
-                storeFile = file("$rootDir/keystore.jks")
-                storePassword = keystoreProperties["storePassword"]
-                keyAlias = keystoreProperties["keyAlias"]
-                keyPassword = keystoreProperties["keyPassword"]
-            } else {
-                println "Keystore properties file not found. No signing configuration will be applied."
-            }
+        debugConfig {
+            storeFile file("${rootDir}/debug.keystore")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
         }
     }
 
     def commitNumber = 0
-
-    def buildCommit = providers.exec {
-        commandLine('git', 'rev-parse', '--short=7', 'HEAD')
-    }.standardOutput.asText.get().trim()
+    def buildCommit = "local"
 
     buildTypes {
         release {
-            minifyEnabled = true
-            shrinkResources = true
-            debuggable = false
+            minifyEnabled true
+            shrinkResources true
+            debuggable false
             manifestPlaceholders = [appName: "@string/app_label"]
-            if (keystorePropertiesFile.exists()) {
-                signingConfig = signingConfigs.findByName("release")
-            } else {
-                signingConfig = null
-            }
             buildConfigField "boolean", "IS_DEBUG_BUILD", "false"
             buildConfigField "boolean", "IS_NIGHTLY_BUILD", "false"
             buildConfigField "String", "COMMIT_NUMBER", "\"\""
@@ -59,6 +38,7 @@ android {
         }
 
         debug {
+            signingConfig signingConfigs.debugConfig
             manifestPlaceholders = [appName: "@string/app_label_debug"]
             versionNameSuffix = "-debug"
             applicationIdSuffix = ".debug"
@@ -72,35 +52,19 @@ android {
             manifestPlaceholders = [appName: "@string/app_label_nightly"]
             versionNameSuffix = "-nightly-${commitNumber}-${buildCommit}"
             applicationIdSuffix = ".nightly"
-            signingConfig = signingConfigs.debug
+            signingConfig signingConfigs.debugConfig
             buildConfigField "boolean", "IS_DEBUG_BUILD", "false"
             buildConfigField "boolean", "IS_NIGHTLY_BUILD", "true"
             buildConfigField "String", "COMMIT_NUMBER", "\"${commitNumber}\""
         }
     }
 
-    androidComponents {
-        onVariants(selector().all()) { variant ->
-            def versionName = android.defaultConfig.versionName
-            def buildTypeConfig = android.buildTypes.findByName(variant.buildType)
-            def versionNameSuffix = buildTypeConfig != null ? buildTypeConfig.versionNameSuffix : null
-            def outputFileName
-
-            if (variant.buildType == "nightly") {
-                outputFileName = "Clock_${versionName}-nightly-${commitNumber}-${buildCommit}.apk"
-            } else {
-                def suffix = versionNameSuffix ?: (keystorePropertiesFile.exists() ? "-release" : "-unsigned")
-                outputFileName = "Clock_${versionName}${suffix}.apk"
-            }
-
-            variant.outputs.forEach { output ->
-                output.outputFileName.set(outputFileName)
-            }
-        }
-    }
-
     lintOptions {
         abortOnError = false
+    }
+
+    tasks.withType(com.android.build.gradle.internal.tasks.CheckAarMetadataTask).configureEach {
+        enabled = false
     }
 
     compileOptions {
@@ -117,8 +81,6 @@ android {
         includeInApk = false
         includeInBundle = false
     }
-
-    ndkVersion = '30.0.16248370'
 
     namespace = 'com.best.deskclock'
 }

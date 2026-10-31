@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Shadow -->
+    <path
+        android:pathData="M65.05,51.68 L71.47,47.97"
+        android:strokeWidth="1.08"
+        android:strokeColor="#66050C1C"
+        android:strokeLineCap="round" />
+    <!-- White Minute Hand (Default 10m position, pivot at 64.90, 51.37) -->
+    <path
+        android:pathData="M64.90,51.37 L71.32,47.66"
+        android:strokeWidth="1.06"
+        android:strokeColor="#F5F9FF"
+        android:strokeLineCap="round" />
+</vector>

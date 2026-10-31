@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="704dp"
+    android:height="704dp"
+    android:viewportWidth="704"
+    android:viewportHeight="704">
+    <!-- Transparent dial canvas at 2x 704x704 resolution matching inner dial face (r=176 -> d=352 in 1024 space) -->
+    <path
+        android:pathData="M352,352m-350,0a350,350 0 1,1 700,0a350,350 0 1,1 -700,0"
+        android:fillColor="#00000000" />
+</vector>

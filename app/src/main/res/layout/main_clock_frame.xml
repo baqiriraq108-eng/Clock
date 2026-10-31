@@ -6,6 +6,7 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_clock_container"
     android:layout_width="match_parent"
@@ -14,11 +15,33 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
+    <com.best.deskclock.uicomponents.Model3ClockView
+        android:id="@+id/model3_clock_view"
+        android:layout_width="224dp"
+        android:layout_height="224dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="4dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/pin_live_micro_tile_button"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="6dp"
+        android:minHeight="48dp"
+        android:text="@string/live_clock_pin_banner"
+        android:textSize="13sp"
+        app:icon="@drawable/ic_widget"
+        app:iconGravity="textStart" />
+
     <com.best.deskclock.uicomponents.AnalogClock
         android:id="@+id/analog_clock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:visibility="gone"
         tools:visibility="gone" />
 
     <com.best.deskclock.uicomponents.AutoSizingTextClock
@@ -32,6 +55,8 @@
         android:singleLine="true"
         android:fontFeatureSettings="tnum"
         android:textSize="60sp"
+        android:visibility="gone"
+        tools:visibility="gone"
         tools:text="12:34" />
 
     <include layout="@layout/date_and_next_alarm_time"

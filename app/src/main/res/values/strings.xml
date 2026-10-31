@@ -12,7 +12,14 @@
     <!-- ******************** -->
 
     <!-- Label shown on launcher icon -->
+    <string name="app_name">Clock</string>
     <string name="app_label">Clock</string>
+    <string name="live_clock_widget_desc">Model 3 Live Real-Time Clock (1x1 Home Screen Icon)</string>
+    <string name="live_clock_pin_banner">Add Real-Time Model 3 Clock to Home Screen</string>
+    <string name="live_clock_pin_button">Pin 1x1 Live Clock</string>
+    <string name="live_clock_dialog_title">Model 3 – Live Clock Architecture</string>
+    <string name="live_clock_tile_pinned_toast">Model 3 Live Clock added to Home Screen</string>
+    <string name="live_clock_pin_not_supported">Automatic pinning is not supported by your launcher. You can add the 1x1 Model 3 Live Clock from your launcher widgets menu.</string>
     <!-- Default label to display for an alarm -->
     <string name="default_label">Alarm</string>
     <!-- Label "Default" -->

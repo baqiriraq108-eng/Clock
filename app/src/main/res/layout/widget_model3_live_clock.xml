@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="1dp"
+    tools:ignore="Deprecated">
+
+    <!-- 1:1 Square Container dynamically padded by LiveClockWidgetProvider to match square cell bounds -->
+    <FrameLayout
+        android:id="@+id/widget_square_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Layer 1: Static Clean Base Plate (Squircle, Concentric Blue Waves, Unified Curved Orange Arrow, Empty Dial Ring/Face with 4 Ticks, Empty Sea-Glass Emerald Bubble) -->
+        <ImageView
+            android:id="@+id/widget_base_plate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/model3_widget_base"
+            android:contentDescription="@null" />
+
+        <!-- Layer 2: Real-Time Rotating Analog Clock (Centered at cx=654, cy=472 with diameter 352 in 1024x1024 SVG space) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1024">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="296" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="352"
+                android:orientation="horizontal"
+                android:weightSum="1024">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="478" />
+
+                <AnalogClock
+                    android:id="@+id/widget_analog_clock"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="352"
+                    android:dial="@drawable/model3_analog_dial_face"
+                    android:hand_hour="@drawable/model3_hand_hour"
+                    android:hand_minute="@drawable/model3_hand_minute"
+                    android:hand_second="@drawable/model3_hand_second"
+                    tools:targetApi="31" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="194" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="376" />
+        </LinearLayout>
+
+        <!-- Layer 3: Organic Sea-Glass Emerald Bubble Overlay (Occludes analog hands as they sweep underneath the bubble) -->
+        <ImageView
+            android:id="@+id/widget_emerald_bubble"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/model3_emerald_bubble"
+            android:contentDescription="@null" />
+
+        <!-- Layer 4: Real-Time Wavy Vector Digital Numerals inside the Sea-Glass Emerald Bubble ([160..640, 540..800] in 1024x1024 SVG space) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1024">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="540" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="260"
+                android:orientation="horizontal"
+                android:weightSum="1024">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="160" />
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="480">
+
+                    <!-- High-DPI Wavy Vector Numeral Canvas rendered by LiveBubbleTimeRenderer -->
+                    <ImageView
+                        android:id="@+id/widget_digital_clock_canvas"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:contentDescription="@null" />
+
+                    <!-- Hidden native TextClock retained for accessibility and launcher clock semantics -->
+                    <TextClock
+                        android:id="@+id/widget_digital_clock"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:ellipsize="none"
+                        android:includeFontPadding="false"
+                        android:alpha="0"
+                        android:format12Hour="h:mm"
+                        android:format24Hour="HH:mm"
+                        android:textColor="#00FFFFFF"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif"
+                        android:textSize="7.5dp"
+                        tools:ignore="SpUsage" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="384" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="224" />
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

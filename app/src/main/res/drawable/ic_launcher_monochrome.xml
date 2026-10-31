@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     SPDX-FileCopyrightText: 2022 The LineageOS Project
-     Modified
-     SPDX-License-Identifier: Apache-2.0
--->
-
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Hour hand -->
+
+    <!-- Stationary Upper-Left L-Arrow Silhouette with 45-Degree Elbow Crease Gap -->
     <path
-        android:pathData="M37.147 39.859c-.364.433-.337 1.073.062 1.475l8.687 8.746c.654-1.348 1.634-2.509 2.838-3.379L38.611 39.663c-.465-.323-1.1-.238-1.464.196Z"
         android:fillColor="#FFFFFF"
-        android:fillType="evenOdd" />
-    <!-- Minute hand -->
+        android:pathData="M34.8,29.0 L41.2,37.0 L37.0,37.0 L37.0,42.2 L32.6,46.6 L32.6,37.0 L28.4,37.0 Z" />
     <path
-        android:pathData="M75.449 36.002c.362.431.33 1.069-.075 1.462L62.18 50.242c-.677-1.472-1.741-2.73-3.06-3.645L73.997 35.822c.456-.33 1.09-.252 1.452.18Z"
         android:fillColor="#FFFFFF"
-        android:fillType="evenOdd" />
-    <!-- Second hand -->
+        android:pathData="M37.8,43.0 L43.0,43.0 L43.0,38.8 L51.0,45.2 L43.0,51.6 L43.0,47.4 L33.4,47.4 Z" />
+
+    <!-- Analog Dial Ring & 1:38 Hands Silhouette -->
     <path
-        android:pathData="M55 62.945V79c0 .552-.448 1-1 1s-1-.448-1-1V62.945c.328.036.662.055 1 .055s.672-.019 1-.055Z"
         android:fillColor="#FFFFFF"
-        android:fillType="evenOdd" />
-    <!-- Center -->
+        android:fillType="evenOdd"
+        android:pathData="M64.2,49.8m-14.2,0a14.2,14.2 0 1,1 28.4,0a14.2,14.2 0 1,1 -28.4,0 M64.2,49.8m-11.0,0a11.0,11.0 0 1,0 22.0,0a11.0,11.0 0 1,0 -22.0,0" />
     <path
-        android:pathData="M54 54m-6 0a6 6 0 1 1 12 0a6 6 0 1 1-12 0"
-        android:fillColor="#FFFFFF" />
+        android:pathData="M64.2,49.8 L69.8,45.0 M64.2,49.8 L57.5,55.8"
+        android:strokeWidth="1.8"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round" />
+
+    <!-- Organic Green Digital Bubble Silhouette -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36.5,51.8 C41.5,51.5 46.2,56.2 51.8,57.1 C58.6,58.0 62.4,62.2 61.2,67.8 C60.0,73.4 51.5,75.6 42.8,75.0 C33.5,74.3 26.8,69.0 27.5,62.2 C28.2,56.0 32.2,52.1 36.5,51.8 Z" />
 </vector>

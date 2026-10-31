@@ -67,6 +67,7 @@ public class DeskClockApplication extends Application implements Application.Act
         controller.init(this, prefs);
         controller.addEventTracker(new LogEventTracker());
         controller.updateShortcuts();
+        com.best.deskclock.uicomponents.LiveLauncherIconManager.updateLiveLauncherIcon(this, true);
 
         if (SdkUtils.isAtLeastAndroid8()) {
             NotificationUtils.updateNotificationChannels(this);
@@ -79,6 +80,7 @@ public class DeskClockApplication extends Application implements Application.Act
     public void onActivityStarted(@NonNull Activity activity) {
         if (mStartedActivities == 0 && !mIsChangingConfiguration) {
             mDataModel.setApplicationInForeground(true);
+            com.best.deskclock.uicomponents.LiveLauncherIconManager.updateLiveLauncherIcon(this, false);
         }
 
         mIsChangingConfiguration = false;

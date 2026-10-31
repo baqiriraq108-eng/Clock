@@ -104,6 +104,7 @@ class ShortcutController {
             }
 
             mShortcutManager.enableShortcuts(enabledShortcutIds);
+            com.best.deskclock.uicomponents.LiveLauncherIconManager.updateLiveLauncherIcon(localizedContext, true);
         } catch (IllegalStateException e) {
             LogUtils.wtf(e);
         }

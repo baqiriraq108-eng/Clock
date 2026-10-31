@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="704dp"
+    android:height="704dp"
+    android:viewportWidth="704"
+    android:viewportHeight="704">
+    <!--
+        Exact SVG Hour Hand specification (2x over 352x352 inner dial centered at 352,352):
+        SVG: <rect x="641" y="366" width="26" height="118" rx="13" fill="url(#whiteHandGrad)" />
+        Relative to pivot (654,472): x=[-13..+13], y=[-106..+12], rx=13
+        At 2x around (352,352): x=[326..378] (w=52), y=[140..376] (h=236), rx=26
+    -->
+    <!-- Multi-Layer Feathered Drop Shadow (SVG handShadow: dx=0, dy=6, stdDeviation=6, #010514, opacity=0.75) -->
+    <path
+        android:pathData="M352,146 A32,32 0 0,1 384,178 L384,356 A32,32 0 0,1 320,356 L320,178 A32,32 0 0,1 352,146 Z"
+        android:fillColor="#1E010514" />
+    <path
+        android:pathData="M352,149 A29,29 0 0,1 381,178 L381,359 A29,29 0 0,1 323,359 L323,178 A29,29 0 0,1 352,149 Z"
+        android:fillColor="#38010514" />
+    <path
+        android:pathData="M352,152 A26,26 0 0,1 378,178 L378,362 A26,26 0 0,1 326,362 L326,178 A26,26 0 0,1 352,152 Z"
+        android:fillColor="#58010514" />
+
+    <!-- Main Sculpted Hour Hand Capsule with SVG whiteHandGrad (#FFFFFF -> #DCE6F7) -->
+    <path
+        android:pathData="M352,140 A26,26 0 0,1 378,166 L378,350 A26,26 0 0,1 326,350 L326,166 A26,26 0 0,1 352,140 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="326"
+                android:startY="140"
+                android:endX="378"
+                android:endY="376"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FFFFFFFF" />
+                <item android:offset="1.0" android:color="#FFDCE6F7" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

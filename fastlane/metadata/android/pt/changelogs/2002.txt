@@ -1,7 +1,0 @@
-**Correção:**
-* Visualização de atalhos com toque longo no ícone do aplicativo corrigida;
-
-**Melhoria:**
-* Permissões desnecessárias removidas;
-
-Mudanças principais podem ser achadas aqui: https://github.com/BlackyHawky/Clock/releases/tag/2.0

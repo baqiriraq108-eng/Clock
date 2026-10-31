@@ -98,7 +98,8 @@ public class AlarmInitReceiver extends BroadcastReceiver {
             dataModel.updateAfterTimeSet();
         }
 
-        // Update shortcuts so they exist for the user.
+        // Update shortcuts and live Model 3 launcher icon so they stay synchronized with system time.
+        com.best.deskclock.uicomponents.LiveLauncherIconManager.updateLiveLauncherIcon(appContext, true);
         if (ACTION_BOOT_COMPLETED.equals(action)
             || ACTION_LOCALE_CHANGED.equals(action)
             || ACTION_APPLICATION_LOCALE_CHANGED.equals(action)) {

@@ -1,39 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    App icon inspired by LineageOS DeskClock, modified by BlackyHawky
-    SPDX-License-Identifier: GPL-3.0-only
--->
-
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="24dp"
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
 
-    <!-- Background -->
+    <!-- Deep Blue Rounded-Square Container -->
     <path
-        android:pathData="M12,12m-12,0a12,12 0 1,1 24,0a12,12 0 1,1 -24,0"
-        android:fillColor="#2196F3" />
+        android:pathData="M5.5,2h13A3.5,3.5 0 0,1 22,5.5v13A3.5,3.5 0 0,1 18.5,22h-13A3.5,3.5 0 0,1 2,18.5v-13A3.5,3.5 0 0,1 5.5,2z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="2"
+                android:startY="2"
+                android:endX="22"
+                android:endY="22"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#1B3F92" />
+                <item android:offset="1.0" android:color="#0A1944" />
+            </gradient>
+        </aapt:attr>
+    </path>
 
-    <!-- Hour hand -->
+    <!-- Orange Directional L-Arrow -->
     <path
-        android:pathData="M8.255 8.858c.081-.096.222-.115.325-.043l3.6 2.4c.004.003.008.006.012.009C11.452 11.17 11 11.53 11 12c0 .016 0 .032.001.048-.004-.004-.007-.007-.01-.01L8.27 9.185c-.089-.089-.095-.231-.015-.327Z"
-        android:fillColor="@android:color/white" />
+        android:pathData="M6.4,4.2 L8.6,6.8 L7.1,6.8 L7.1,8.5 L9.0,8.5 L9.0,7.1 L11.4,8.95 L9.0,10.8 L9.0,9.5 L6.8,9.5 A1.0,1.0 0 0,1 5.8,8.5 L5.8,6.8 L4.3,6.8 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="5.5"
+                android:startY="4.2"
+                android:endX="11.0"
+                android:endY="10.5"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FFDF5D" />
+                <item android:offset="1.0" android:color="#F57C00" />
+            </gradient>
+        </aapt:attr>
+    </path>
 
-    <!-- Minute hand -->
+    <!-- Right Analog Clock Lavender Outer Ring -->
     <path
-        android:pathData="M16.766 8.000c-.080-.096-.221-.113-.322-.040L12.111 11.098c-.008.006-.015.011-.022.017C12.538 11.160 13 11.527 13 12c0 .022-.001.044-.003.066.007-.006.014-.013.020-.019L16.750 8.325c.090-.087.097-.229.016-.325Z"
-        android:fillColor="@android:color/white" />
+        android:pathData="M15.8,11.0m-4.6,0a4.6,4.6 0 1,1 9.2,0a4.6,4.6 0 1,1 -9.2,0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="11.2"
+                android:startY="6.4"
+                android:endX="20.4"
+                android:endY="15.6"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#B2C7FF" />
+                <item android:offset="1.0" android:color="#5D7CE8" />
+            </gradient>
+        </aapt:attr>
+    </path>
 
-    <!-- Second hand -->
+    <!-- Analog Clock Dark Navy Face -->
     <path
-        android:pathData="M12 17V12"
-        android:strokeWidth="0.444"
-        android:strokeColor="#E53935"
+        android:pathData="M15.8,11.0m-3.6,0a3.6,3.6 0 1,1 7.2,0a3.6,3.6 0 1,1 -7.2,0"
+        android:fillColor="#112246" />
+
+    <!-- Analog Clock Hands & Blue Pivot -->
+    <path
+        android:pathData="M15.8,11.0 L14.1,9.7 M15.8,11.0 L18.0,9.6"
+        android:strokeWidth="0.65"
+        android:strokeColor="#F5F9FF"
         android:strokeLineCap="round" />
-
-    <!-- Center -->
     <path
-        android:pathData="M12 12m-0.889 0a0.889 0.889 0 1 1 1.778 0a0.889 0.889 0 1 1 -1.778 0"
-        android:fillColor="#9E9E9E" />
+        android:pathData="M15.8,11.0 L17.4,13.1"
+        android:strokeWidth="0.38"
+        android:strokeColor="#3D8BFD"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M15.8,11.0m-0.55,0a0.55,0.55 0 1,1 1.1,0a0.55,0.55 0 1,1 -1.1,0"
+        android:fillColor="#3D8BFD" />
+
+    <!-- Lower-Left Organic Green Digital Bubble -->
+    <path
+        android:pathData="M6.5,11.6 C8.1,11.5 9.6,13.1 11.4,13.4 C13.6,13.7 14.8,15.0 14.4,16.8 C14.0,18.6 11.3,19.3 8.5,19.1 C5.5,18.9 3.4,17.2 3.6,15.0 C3.8,13.0 5.1,11.7 6.5,11.6 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="4.0"
+                android:startY="11.8"
+                android:endX="14.2"
+                android:endY="18.8"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#5EEAD4" />
+                <item android:offset="0.5" android:color="#14B8A6" />
+                <item android:offset="1.0" android:color="#065F5B" />
+            </gradient>
+        </aapt:attr>
+    </path>
 </vector>
